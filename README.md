@@ -130,7 +130,10 @@ Test AUC : 0.84
 
 #### Screenshots
 
+1. **Cluster**
 ![Dataproc Cluster](image.png)
+
+2. **Output**
 ![Job Output](output.png)
 
 ## Challenges and Solutions
