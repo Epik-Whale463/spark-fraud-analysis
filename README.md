@@ -101,6 +101,38 @@ model = lr.fit(train_df)
 predictions = model.transform(test_df)
 ```
 
+## Google Cloud Dataproc Deployment
+
+This project was deployed and executed on a real Google Cloud Dataproc cluster.
+
+### Proof of Deployment
+
+- **Cluster:** 3-node Dataproc cluster (`n1-standard-4` workers) in `us-central1`
+- **Data Source:** Google Cloud Storage (`gs://fin_data_bucket/transactions_dataset.csv`)
+- **Job Submission:** Used `gcloud dataproc jobs submit pyspark`
+- **Distributed Execution:** Verified by Spark logs and output
+
+#### Example Output
+
+``` txt
+Master: yarn
+App Name: FinAnalysis
+Number of partitions : 22
+Test AUC : 0.84
++------+---------+-------+
+|actual|predicted|  count|
++------+---------+-------+
+|     0|        0|1197521|
+|     1|        0| 168253|
+|     1|        1| 129903|
++------+---------+-------+
+```
+
+#### Screenshots
+
+![Dataproc Cluster](image.png)
+![Job Output](output.png)
+
 ## Challenges and Solutions
 
 1. **Memory Management**:
